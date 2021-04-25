@@ -1,0 +1,38 @@
+{
+ "author": "",
+ "comments": {
+  "dependencies": {
+   "@tailwindcss/aspect-ratio": "project",
+   "@tailwindcss/forms": "project",
+   "@tailwindcss/typography": "project"
+  },
+  "devDependencies": {
+   "@fullhuman/postcss-purgecss": "project",
+   "autoprefixer": "project",
+   "postcss": "project",
+   "postcss-cli": "project",
+   "tailwindcss": "project"
+  }
+ },
+ "dependencies": {
+  "@tailwindcss/aspect-ratio": "^0.2.0",
+  "@tailwindcss/forms": "^0.3.2",
+  "@tailwindcss/typography": "^0.4.0"
+ },
+ "description": "",
+ "devDependencies": {
+  "@fullhuman/postcss-purgecss": "^4.0.3",
+  "autoprefixer": "^10.2.5",
+  "postcss": "^8.2.10",
+  "postcss-cli": "^8.3.1",
+  "tailwindcss": "^2.1.1"
+ },
+ "keywords": [],
+ "license": "ISC",
+ "main": "index.js",
+ "name": "hugo-theme-barebones",
+ "scripts": {
+  "test": "echo \"Error: no test specified\" \u0026\u0026 exit 1"
+ },
+ "version": "1.0.0"
+}

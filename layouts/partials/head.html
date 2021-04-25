@@ -1,0 +1,8 @@
+<head>
+    {{- $isProd := eq hugo.Environment "production" -}}
+    {{- $css := resources.Get "css/styles.css" | resources.PostCSS (dict "config" "./assets/css/postcss.config.js" "inlineImports" true) -}}
+    {{- if $isProd -}}
+        {{- $css = $css | minify | fingerprint | resources.PostProcess -}}
+    {{- end -}}
+    <link rel="stylesheet" href="{{ $css.RelPermalink }}">
+</head>
