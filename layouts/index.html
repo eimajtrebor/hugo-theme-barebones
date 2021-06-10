@@ -1,10 +1,5 @@
-index.html
-
-<ul>
-    {{ range .Site.Pages }}
-    <li>
-        ({{ .Kind }}) <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-    </li>
-    {{ end }}
-</ul>
-
+{{ define "main" }}
+<section>
+    {{ partial "list-of-pages.html" . }}
+</section>
+{{ end }}

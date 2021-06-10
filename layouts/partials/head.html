@@ -1,8 +1,34 @@
 <head>
-    {{- $isProd := eq hugo.Environment "production" -}}
-    {{- $css := resources.Get "css/styles.css" | resources.PostCSS (dict "inlineImports" true) -}}
-    {{- if $isProd -}}
-        {{- $css = $css | minify | fingerprint | resources.PostProcess -}}
-    {{- end -}}
-    <link rel="stylesheet" href="{{ $css.RelPermalink }}">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <meta name="description" content="{{ .Site.Params.description }}">
+  <meta name="author" content="{{ .Site.Params.author }}">
+  <meta name="description" content="{{ if .IsHome }}{{ .Site.Params.description }}{{ else }}{{ .Summary | plainify }}{{ end }}">
+
+  {{- $isProd := eq hugo.Environment "production" -}}
+  {{- $css := resources.Get "css/styles.css" | resources.PostCSS (dict "inlineImports" true) -}}
+  {{- if $isProd -}}
+  {{- $css = $css | minify | fingerprint | resources.PostProcess -}}
+  {{- end -}}
+  <link rel="stylesheet" href="{{ $css.RelPermalink }}">
+
+  {{- partial "social-media.html" . -}}
+
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+
+  <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} - {{ .Site.Title }}{{ end }}</title>
+
+  {{ partial "scripts.html" }}
+
+  {{ partial "analytics.html" }}
+
+  {{ with .OutputFormats.Get "RSS" }}
+  <link rel="alternate" href="{{ .RelPermalink | absURL }}" type="application/rss+xml" title="{{ $.Site.Title }}">
+  {{ end }}
+
 </head>
