@@ -1,4 +1,4 @@
-<header class="container flex flex-row justify-between p-4 mx-auto mb-4 text-xl font-medium bg-green-50">
+<header class="container flex flex-row items-center justify-between p-4 mx-auto mb-4 text-xl font-medium bg-green-50">
     <div>
         <a href="/">
             <p class="py-4 text-5xl font-black tracking-tight">CodingSkills</p>
@@ -6,6 +6,10 @@
         <!--
         <p class="text-xs tracking-tight uppercase">A blog by Jim McCormick</p>
         -->
+    </div>
+    <div class="w-12 h-12">
+        {{ $icon := resources.Get "svg/heroicons/optimized/outline/menu.svg" }}
+        {{ $icon.Content | safeHTML }}
     </div>
     <!--
     <nav>

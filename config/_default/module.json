@@ -1,0 +1,18 @@
+{
+    "imports": [
+        {
+            "path": "github.com/tailwindlabs/heroicons",
+            "mounts": [
+                {
+                    "source": "src",
+                    "target": "assets/svg/heroicons"
+                },
+                {
+                    "source": "optimized",
+                    "target": "assets/svg/heroicons/optimized"
+                }
+            ]
+
+        }
+    ]
+}

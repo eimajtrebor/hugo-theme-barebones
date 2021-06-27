@@ -1,0 +1,5 @@
+github.com/eimajtrebor/hugo-mod-heroicons v0.0.0-20201017130534-07f09dd2f2f8 h1:RYguOV/Ubdb+yxENNWtehJPDUCpvMFxAqe0CheLmCL8=
+github.com/eimajtrebor/hugo-mod-heroicons v0.0.0-20201017130534-07f09dd2f2f8/go.mod h1:la8aikeVFFYvTHYkbYJjccI/7KaP7DQMBOIeF9GfDXg=
+github.com/refactoringui/heroicons v0.4.2/go.mod h1:82HsLWQga7MkEl5aK8TctxPPIBlXrsyWcVTB57uipuk=
+github.com/tailwindlabs/heroicons v1.0.1 h1:sH2XMVhZEu2cwuWcCKR4XZlA0HYCakVZIZkboa4/FWo=
+github.com/tailwindlabs/heroicons v1.0.1/go.mod h1:2SHGOdw86jviBkoeQINcTfkzAAao9dciip4RsMS9xIg=
