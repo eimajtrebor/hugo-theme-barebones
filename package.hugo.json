@@ -8,7 +8,6 @@
     },
     "devDependencies": {
       "@fullhuman/postcss-purgecss": "project",
-      "alpinejs": "project",
       "autoprefixer": "project",
       "postcss": "project",
       "postcss-cli": "project",
