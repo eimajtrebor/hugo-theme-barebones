@@ -6,9 +6,9 @@
         <a href="/">
             <p class="py-4 text-4xl font-black tracking-tight">{{ .Site.Title }}</p>
         </a>
-        <!--
-            <p class="text-xs tracking-tight uppercase">{{ .Site.Summary }}</p>
-        -->
+        {{- with .Site.Params.Summary -}}
+            <p class="text-xs tracking-tight uppercase">{{ . }}</p>
+        {{- end -}}
     </div>
     <div class="w-8 h-8" @click="menuIsOpen = !menuIsOpen">
         {{ $menuIcon := resources.Get $menuIconPath }}
