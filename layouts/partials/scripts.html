@@ -1,1 +1,2 @@
-<!-- Override this file to add any references to any scripts -->
+{{ $js := resources.Get "js/app.js" | js.Build }}
+<script type="text/javascript" src="{{ $js.RelPermalink }}" defer></script>
