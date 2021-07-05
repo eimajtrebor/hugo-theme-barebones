@@ -6,7 +6,7 @@
         <a href="/">
             <p class="py-4 text-4xl font-black tracking-tight">{{ .Site.Title }}</p>
         </a>
-        {{- with .Site.Params.Summary -}}
+        {{- with .Site.Params.tagline -}}
             <p class="text-xs tracking-tight uppercase">{{ . }}</p>
         {{- end -}}
     </div>
