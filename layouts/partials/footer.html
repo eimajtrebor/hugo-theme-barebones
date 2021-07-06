@@ -1,4 +1,5 @@
 <footer class="container flex flex-row justify-center p-8 mx-auto text-white bg-gray-900 text-md">
     {{- with .Site.Params.copyright -}}
     <p>&copy;{{ now.Format "2006" }} {{ . }}</p>
+    {{ end }}
 </footer>
