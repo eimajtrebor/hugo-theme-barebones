@@ -1,25 +1,27 @@
 {{- $svgPath := "svg/heroicons/optimized/outline" -}}
 {{- $menuIconPath := printf "%s/%s" $svgPath "menu.svg" -}}
 {{- $closeIconPath := printf "%s/%s" $svgPath "x.svg" -}}
-<header x-data="{ menuIsOpen: false }" class="container flex flex-row items-center justify-between p-4 mx-auto mb-4 text-xl font-medium bg-green-50">
-    <div>
-        <a href="/">
-            <p class="py-4 text-4xl font-black tracking-tight">{{ .Site.Title }}</p>
-        </a>
-        {{- with .Site.Params.tagline -}}
-            <p class="text-xs tracking-tight uppercase">{{ . }}</p>
-        {{- end -}}
-    </div>
-    <nav class="px-8 py-4">
-        <ul class="text-lg flex flex-row space-x-8">
-            <li><a class="text-gray-600 hover:underline" href="/posts">Posts</a></li>
-            <li><a class="text-gray-600 hover:underline" href="/tags">Topics</a></li>
-        </ul>
-    </nav>
+<header x-data="{ menuIsOpen: false }" class="mb-16 bg-white border-b-8 border-red-200">
+    <div class="container flex flex-row items-center justify-between p-4 px-16 py-4 mx-auto text-xl font-medium">
+        <div>
+            <a href="/">
+                <p class="py-4 text-4xl font-black tracking-tight">{{ .Site.Title }}</p>
+            </a>
+            {{- with .Site.Params.tagline -}}
+                <p class="text-xs tracking-tight uppercase">{{ . }}</p>
+            {{- end -}}
+        </div>
+        <nav class="hidden px-8 py-4 lg:block">
+            <ul class="flex flex-row text-lg space-x-8">
+                <li><a class="text-gray-600 hover:underline" href="/posts">Posts</a></li>
+                <li><a class="text-gray-600 hover:underline" href="/tags">Topics</a></li>
+            </ul>
+        </nav>
 
-    <div class="lg:hidden w-8 h-8" @click="menuIsOpen = !menuIsOpen">
-        {{ $menuIcon := resources.Get $menuIconPath }}
-        {{ $menuIcon.Content | safeHTML }}
+        <div x-cloak class="w-8 h-8 lg:hidden" @click="menuIsOpen = !menuIsOpen">
+            {{ $menuIcon := resources.Get $menuIconPath }}
+            {{ $menuIcon.Content | safeHTML }}
+        </div>
     </div>
 
     <!-- Menu component -->

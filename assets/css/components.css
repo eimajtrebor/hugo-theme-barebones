@@ -1,0 +1,12 @@
+/* components.css */
+[x-cloak] {
+  display: none !important;
+}
+
+.highlight {
+  @apply text-sm md:text-base;
+}
+
+.highlight > pre {
+  @apply overflow-x-auto;
+}

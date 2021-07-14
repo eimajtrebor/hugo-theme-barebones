@@ -1,15 +1,15 @@
 {{ define "main" }}
-<article class="container p-4 mx-auto mb-8">
-    <h1 class="mb-4 text-4xl font-bold tracking-tight">{{ .Title }}</h1>
-    <h2 class="mb-4 text-lg text-gray-600 uppercase">{{ dateFormat "2 January 2006" .Date }}</h2>
-    <div class="flex flex-row justify-start mb-4 space-x-2">
+<article class="px-4 mb-8 bg-white lg:py-16 lg:shadow lg:px-32 xl:px-72">
+    <h1 class="mb-4 text-4xl font-semibold tracking-tight text-gray-700">{{ .Title }}</h1>
+    <h2 class="mb-4 text-sm text-gray-400 uppercase">{{ dateFormat "2 January 2006" .Date }} | {{ .ReadingTime }} minute read</h2>
+    <div class="flex flex-row justify-start pb-4 mb-4 border-b space-x-2">
         {{ range (.GetTerms "tags") }}
             <a href="{{ .Permalink }}">
-                <span class="px-2 py-1 text-base font-bold text-white uppercase bg-gray-600 rounded">{{ .LinkTitle }}</span>
+                <span class="px-2 py-1 text-xs text-white uppercase bg-gray-700 rounded">{{ .LinkTitle }}</span>
             </a>
         {{ end }}
     </div>
-    <div class="prose prose-lg">
+    <div class="text-gray-700 prose prose-lg max-w-none">
         {{ .Content }}
     </div>
 </article>
