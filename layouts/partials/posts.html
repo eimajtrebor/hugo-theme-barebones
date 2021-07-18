@@ -1,0 +1,22 @@
+{{ range site.RegularPages }}
+    <div class="overflow-hidden text-gray-700 rounded shadow-lg sm:max-w-sm">
+        <a href="{{ .RelPermalink }}">
+            <div class="aspect-w-9 aspect-h-6">
+                <img alt="{{ .Title }}" src="{{ .Params.image }}" />
+            </div>
+        </a>
+            <div class="flex flex-col p-4 space-y-4">
+                    <h2 class="text-2xl font-semibold tracking-tight">{{ .Title }}</h1>
+                    <p class="text-lg">{{ .Params.summary }}</p>
+                    <button class="w-1/2 py-2 text-base text-white bg-gray-700 rounded-md">Read post</button>
+                    <div class="space-x-1">
+                        {{ range (.GetTerms "tags") }}
+                            <a href="{{ .Permalink }}">
+                                <span class="px-2 py-1 text-xs text-white text-gray-700 uppercase bg-gray-300 rounded">{{ .LinkTitle }}</span>
+                            </a>
+                        {{ end }}
+                    </div>
+            </div>
+    </div>
+{{ end }}
+
