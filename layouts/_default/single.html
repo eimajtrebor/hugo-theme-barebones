@@ -5,7 +5,7 @@
     <div class="flex flex-row flex-wrap pb-4 pb-8 mb-4 border-b gap-2">
         {{ range (.GetTerms "tags") }}
             <a href="{{ .Permalink }}">
-                <span class="px-2 py-1 text-xs text-white text-gray-700 uppercase bg-gray-300 rounded">{{ .LinkTitle }}</span>
+                <span class="px-2 py-1 text-xs text-white text-gray-700 uppercase bg-gray-200 rounded">{{ .LinkTitle }}</span>
             </a>
         {{ end }}
     </div>
