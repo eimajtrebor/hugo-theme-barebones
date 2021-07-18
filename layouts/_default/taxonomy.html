@@ -1,6 +1,8 @@
 {{ define "main" }}
 <section class="container p-4 mx-auto mb-8">
     <h1 class="mb-8 text-4xl font-bold tracking-tight">#{{ .Title }}</h1>
-    {{ partial "list-of-pages.html" . }}
+    <div class="gap-8 grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-2">
+        {{ partial "posts.html" . }}
+    </div>
 </section>
 {{ end }}
