@@ -1,8 +1,8 @@
 {{ define "main" }}
-<article class="px-4 mb-8 bg-white lg:py-16 lg:shadow lg:px-32 xl:px-72">
+<article class="px-4 py-8 mb-8 bg-white lg:py-16 md:shadow lg:px-32 xl:px-72">
     <h1 class="mb-4 text-4xl font-semibold tracking-tight text-gray-700">{{ .Title }}</h1>
     <h2 class="mb-4 text-sm text-gray-400 uppercase">{{ dateFormat "2 January 2006" .Date }} | {{ .ReadingTime }} minute read</h2>
-    <div class="flex flex-row justify-start pb-4 mb-4 border-b space-x-2">
+    <div class="flex flex-row flex-wrap pb-4 pb-8 mb-4 border-b gap-2">
         {{ range (.GetTerms "tags") }}
             <a href="{{ .Permalink }}">
                 <span class="px-2 py-1 text-xs text-white text-gray-700 uppercase bg-gray-300 rounded">{{ .LinkTitle }}</span>
