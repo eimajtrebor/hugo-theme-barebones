@@ -1,5 +1,5 @@
-{{ range site.RegularPages }}
-    <div class="overflow-hidden text-gray-700 rounded shadow-lg sm:max-w-sm">
+{{ range .Paginator.Pages }}
+    <div class="overflow-hidden text-gray-700 rounded shadow-lg">
         <a href="{{ .RelPermalink }}">
             <div class="aspect-w-9 aspect-h-6">
                 <img alt="{{ .Title }}" src="{{ .Params.image }}" />
@@ -20,4 +20,3 @@
         </div>
     </div>
 {{ end }}
-
