@@ -1,7 +1,7 @@
 {{- $svgPath := "svg/heroicons/optimized/outline" -}}
 {{- $menuIconPath := printf "%s/%s" $svgPath "menu.svg" -}}
 {{- $closeIconPath := printf "%s/%s" $svgPath "x.svg" -}}
-<header x-data="{ menuIsOpen: false }" class="mb-16 bg-white border-b-8 border-red-200">
+<header x-cloak x-data="{ menuIsOpen: false }" class="mb-16 bg-white border-b-8 border-red-200">
     <div class="container flex flex-row items-center justify-between p-4 px-16 py-4 mx-auto text-xl font-medium">
         <div>
             <a href="/">

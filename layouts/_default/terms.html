@@ -1,0 +1,16 @@
+{{ define "main" }}
+<section class="container p-4 mx-auto mb-8 max-w-screen-lg">
+    <h1 class="mb-8 text-4xl font-bold tracking-tight">Topics</h1>
+    {{ range $tag, $taxonomy := .Site.Taxonomies.tags }}
+    {{ $numPages := len $taxonomy }}
+    <ul class="text-xl md:text-2xl">
+        <li class="py-2 pl-8">
+            <a class="font-medium underline" href="/tags/{{ $tag }}">
+                <span class="">{{ $tag }}</span>
+            </a>
+            <span>({{ $numPages }} article{{ if gt $numPages 1 }}s{{ end }})</span>
+        </li>
+    </ul>
+    {{ end }}
+</section>
+{{ end }}
