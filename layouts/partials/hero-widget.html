@@ -1,0 +1,8 @@
+{{ $pages := . }}
+{{ range $pages | first 1 }}
+<section class="container flex flex-col px-4 pb-8 mx-auto mb-8 border-b md:pb-16 max-w-screen-lg space-y-8">
+    <h1 class="text-6xl font-semibold tracking-tight text-gray-900 md:text-7xl lg:text-8xl">{{ .Title }}</h1>
+    <p class="text-2xl font-light">{{ .Summary }}</p>
+    <a class="w-2/3 px-8 py-2 text-base text-center text-white bg-gray-700 rounded-lg focus-visible:ring-2 focus-visible:ring-gray-500 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-500 focus:outline-none hover:bg-gray-500 lg:w-1/4 md:w-1/3" href="{{ .RelPermalink }}">Read more...</a>
+</section>
+{{ end }}

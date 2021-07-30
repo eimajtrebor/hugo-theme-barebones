@@ -1,6 +1,7 @@
-<section class="container flex flex-col p-4 mx-auto mb-8 max-w-screen-lg space-y-16">
+{{ $pages := . }}
+<section class="container flex flex-col p-4 py-8 mx-auto mb-8 border-b md:py-16 max-w-screen-lg space-y-16">
     <div class="gap-8 grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2">
-        {{ range .Site.RegularPages | first 6 }}
+        {{ range after 1 $pages | first 6 }}
             {{ partial "card.html" . }}
         {{ end }}
     </div>
