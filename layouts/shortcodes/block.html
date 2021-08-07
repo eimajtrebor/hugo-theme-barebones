@@ -1,24 +1,18 @@
-{{- $global := .Site.Data.settings.global -}}
+{{- $global := .Site.Data.global -}}
 {{- $sectionClass := $global.config.class.section -}}
-{{ $inner := .Inner }}
 
-{{- $params := $.Params -}}
+{{- $params := .Params -}}
+{{- $key := $params.key -}}
+{{- $block := index .Site.Data.blocks $key -}}
 
-{{ range first 1 (where .Site.Data.settings.blocks "name" $params.key) }}
+{{- with $block.config.class.section -}}
+    {{- $sectionClass = . -}}
+{{- end -}}
 
-    {{- $block := . -}}
-
-    {{- with .config.class.section -}}
-        {{ $sectionClass = . }}
+<section data-block="{{ $key }}" class="{{- $sectionClass -}}">
+    {{- with $block.config.partial -}}
+        {{- $partial := .path -}}
+        {{- partial $partial (dict "block" $block "params" $params "global" $global) -}}
     {{- end -}}
-
-    <section class="{{- $sectionClass -}}">
-        {{- with .config.partial -}}
-            {{- $path := .path -}}
-            {{- partial $path (dict "block" $block "params" $params "inner" $inner "global" $global) -}}
-        {{- end -}}
-    </section>
-
-{{ end }}
-
+</section>
 
