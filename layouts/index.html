@@ -1,11 +1,2 @@
 {{ define "main" }}
-{{ $pages := .Site.RegularPages }}
-{{ partial "hero-widget.html" $pages }}
-{{ partial "about-widget.html" . }}
-{{ partial "posts-widget.html" $pages }}
-<section class="container p-4 mx-auto mb-8">
-    <div class="prose prose-lg">
-        {{ .Content }}
-    </div>
-</section>
 {{ end }}
