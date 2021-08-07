@@ -1,0 +1,24 @@
+{{- $global := .Site.Data.settings.global -}}
+{{- $sectionClass := $global.config.class.section -}}
+{{ $inner := .Inner }}
+
+{{- $params := $.Params -}}
+
+{{ range first 1 (where .Site.Data.settings.blocks "name" $params.key) }}
+
+    {{- $block := . -}}
+
+    {{- with .config.class.section -}}
+        {{ $sectionClass = . }}
+    {{- end -}}
+
+    <section class="{{- $sectionClass -}}">
+        {{- with .config.partial -}}
+            {{- $path := .path -}}
+            {{- partial $path (dict "block" $block "params" $params "inner" $inner "global" $global) -}}
+        {{- end -}}
+    </section>
+
+{{ end }}
+
+
