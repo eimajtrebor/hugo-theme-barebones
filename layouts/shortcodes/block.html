@@ -1,15 +1,15 @@
 {{- $global := .Site.Data.global -}}
-{{- $sectionClass := $global.config.class.section -}}
+{{- $class := $global.config.class.section -}}
 
 {{- $params := .Params -}}
 {{- $key := $params.key -}}
 {{- $block := index .Site.Data.blocks $key -}}
 
 {{- with $block.config.class.section -}}
-    {{- $sectionClass = . -}}
+    {{- $class = . -}}
 {{- end -}}
 
-<section data-block="{{ $key }}" class="{{- $sectionClass -}}">
+<section data-block="{{ $key }}" class="{{- $class -}}">
     {{- with $block.config.partial -}}
         {{- $partial := .path -}}
         {{- partial $partial (dict "block" $block "params" $params "global" $global) -}}
