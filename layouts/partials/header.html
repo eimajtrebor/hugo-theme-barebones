@@ -1,20 +1,16 @@
 {{- $svgPath := "svg/heroicons/optimized/outline" -}}
 {{- $menuIconPath := printf "%s/%s" $svgPath "menu.svg" -}}
 {{- $closeIconPath := printf "%s/%s" $svgPath "x.svg" -}}
-<header x-cloak x-data="{ menuIsOpen: false }" class="mb-16 bg-white border-b-8 border-red-200">
-    <div class="container flex flex-row items-center justify-between p-4 px-16 py-4 mx-auto text-xl font-medium">
+<header x-cloak x-data="{ menuIsOpen: false }" class="mb-8 text-gray-900 bg-white shadow-sm">
+    <div class="container flex flex-row items-center justify-between px-4 mx-auto text-xl font-medium max-w-screen-lg">
         <div>
             <a href="/">
-                <p class="py-4 text-4xl font-black tracking-tight">{{ .Site.Title }}</p>
+                {{ partial "logo.html" . }}
             </a>
-            {{- with .Site.Params.tagline -}}
-                <p class="text-xs tracking-tight uppercase">{{ . }}</p>
-            {{- end -}}
         </div>
         <nav class="hidden px-8 py-4 lg:block">
-            <ul class="flex flex-row text-lg space-x-8">
-                <li><a class="text-gray-600 hover:underline" href="/posts">Posts</a></li>
-                <li><a class="text-gray-600 hover:underline" href="/tags">Topics</a></li>
+            <ul>
+                {{- partial "nav.html" (dict "class" "flex flex-row text-lg space-x-8" "showTags" false) -}}
             </ul>
         </nav>
 
@@ -24,32 +20,7 @@
         </div>
     </div>
 
-    <!-- Menu component -->
-    <div x-show="menuIsOpen" x-transition class="absolute top-0 left-0 z-20 w-screen h-screen bg-gray-50">
-        <div class="flex flex-row justify-between p-4 pl-8 mb-8">
-            <h1 class="text-2xl">Menu</h1>
-            <div class="w-8 h-8" @click="menuIsOpen = !menuIsOpen">
-                {{ $closeIcon := resources.Get $closeIconPath }}
-                {{ $closeIcon.Content | safeHTML }}
-            </div>
-        </div>
-        <nav class="px-8 py-4">
-            <ul class="text-lg space-y-4">
-                <li><a class="text-gray-600 hover:underline" href="/posts">Posts</a></li>
-                <li><a class="text-gray-600 hover:underline" href="/tags">Topics</a></li>
-                <li>
-                    <ul class="pl-8 space-y-2">
-                        {{ range $name, $taxonomy := .Site.Taxonomies.tags }}
-                        <li>
-                            <a class="text-gray-600 hover:underline" href="{{ printf "/tags/%s" $name }}">
-                                {{ humanize $name }}
-                            </a>
-                        </li>
-                        {{ end }}
-                    </ul>
-                </li>
-            </ul>
-        </nav>
-    </div>
+    {{- partial "menu.html" (dict "closeIconPath" $closeIconPath) -}}
+
 </header>
 

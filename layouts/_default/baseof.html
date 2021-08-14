@@ -2,8 +2,11 @@
 <html lang="{{ .Site.LanguageCode }}">
     {{- partial "head.html" . -}}
     <body class="bg-white bg-gray-50">
+        {{- if isset .Site.Params "debug" -}}
+            {{- partial "debug.html" . -}}
+        {{- end -}}
         {{- partial "header.html" . -}}
-        <main class="container mx-auto">
+        <main class="mx-auto lg:container">
             {{- block "main" . }}{{- end -}}
         </main>
         {{- partial "footer.html" . -}}

@@ -1,0 +1,20 @@
+{{- $class := .class -}}
+{{- $showTags := .showTags -}}
+<ul class="{{ $class }}">
+    <li><a class="hover:underline" href="/posts">Posts</a></li>
+    <li><a class="hover:underline" href="/tags">Topics</a></li>
+    {{- with $showTags -}}
+    <li>
+        <ul class="pl-8 space-y-2">
+            {{- range $name, $taxonomy := site.Taxonomies.tags -}}
+            <li>
+                <a class="hover:underline" href="{{ printf "/tags/%s" $name }}">
+                    {{ humanize $name }}
+                </a>
+            </li>
+            {{ end }}
+        </ul>
+    </li>
+    {{- end -}}
+</ul>
+
