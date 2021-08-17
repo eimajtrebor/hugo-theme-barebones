@@ -1,8 +1,9 @@
 {{- $class := .class -}}
 {{- $showTags := .showTags -}}
 <ul class="{{ $class }}">
-    <li><a class="hover:underline" href="/posts">Posts</a></li>
-    <li><a class="hover:underline" href="/tags">Topics</a></li>
+    {{- range site.Menus.main -}}
+        <li><a class="hover:underline" href="{{ .URL }}">{{ .Name }}</a></li>
+    {{- end -}}
     {{- with $showTags -}}
     <li>
         <ul class="pl-8 space-y-2">
@@ -12,7 +13,7 @@
                     {{ humanize $name }}
                 </a>
             </li>
-            {{ end }}
+            {{- end -}}
         </ul>
     </li>
     {{- end -}}

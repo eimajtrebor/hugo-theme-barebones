@@ -1,3 +1,15 @@
-{{ range .Paginator.Pages }}
+{{- $ctx := .ctx -}}
+{{- $pages := .pages -}}
+{{- $skip := .skip -}}
+{{- $count := .count -}}
+{{- $isblock := .isblock -}}
+
+{{- if eq $isblock true -}}
+    {{ $pages = after $skip ($pages) | first $count }}
+{{- else -}}
+    {{ $pages = ($ctx.Paginate ($pages) $count).Pages }}
+{{- end -}}
+
+{{- range $pages -}}
     {{ partial "card.html" . }}
-{{ end }}
+{{- end -}}

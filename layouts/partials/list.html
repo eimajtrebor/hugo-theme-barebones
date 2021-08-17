@@ -1,0 +1,15 @@
+{{- $ctx := .ctx -}}
+{{- $skip := .skip -}}
+{{- $count := .count -}}
+{{- $isblock := .isblock -}}
+{{- $pages := .pages -}}
+{{- $title := .title -}}
+<section class="container p-4 mx-auto mb-8 max-w-screen-lg">
+    <h1 class="mb-8 text-4xl font-bold tracking-tight">{{ $title }}</h1>
+    <div class="gap-8 grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2">
+        {{ partial "posts.html" (dict "ctx" $ctx "skip" $skip "count" $count "isblock" $isblock "pages" $pages) }}
+    </div>
+    <div class="mx-auto mt-8 md:mt-16 max-w-screen-sm">
+        {{ template "_internal/pagination.html" $ctx }}
+    </div>
+</section>
