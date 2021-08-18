@@ -1,0 +1,22 @@
+{
+    "main": [
+        {
+            "identifier": "about",
+            "name": "About",
+            "url": "/about",
+            "weight": 10
+        },
+        {
+            "identifier": "posts",
+            "name": "Posts",
+            "url": "/posts",
+            "weight": 20
+        },
+        {
+            "identifier": "topics",
+            "name": "Topics",
+            "url": "/tags",
+            "weight": 30
+        }
+    ]
+}

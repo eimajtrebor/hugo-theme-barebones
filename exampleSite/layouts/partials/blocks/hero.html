@@ -1,0 +1,19 @@
+{{ range first 1 (site.RegularPages.ByPublishDate.Reverse) }}
+<div class="order-first md:w-1/2">
+    <div class="aspect-w-9 aspect-h-6">
+        <img class="rounded-lg" alt="{{ .Title }}" src="{{ .Params.image }}" />
+    </div>
+</div>
+<div class="flex flex-col md:w-1/2 space-y-4 text-gray-700">
+    <h1 class="text-5xl font-semibold tracking-tight text-gray-900 lg:text-6xl">{{ .Title }}</h1>
+    <p class="text-2xl">{{ .Summary }}</p>
+    <div class="flex flex-row flex-wrap pb-8 gap-2">
+        {{ range (.GetTerms "tags") }}
+            <a href="{{ .Permalink }}">
+                <span class="px-2 py-1 text-xs text-gray-700 uppercase bg-gray-200 rounded">{{ .LinkTitle }}</span>
+            </a>
+        {{ end }}
+    </div>
+    <a class="self-center w-5/6 px-8 py-2 text-base text-center text-white uppercase bg-gray-700 rounded-lg focus-visible:ring-2 focus-visible:ring-gray-500 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-500 focus:outline-none hover:bg-gray-500" href="{{ .RelPermalink }}">Read more</a>
+</div>
+{{ end }}

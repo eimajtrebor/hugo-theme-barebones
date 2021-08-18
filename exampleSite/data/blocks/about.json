@@ -1,0 +1,19 @@
+{
+    "name": "about",
+    "config": {
+        "class": {
+            "section": "container flex flex-col px-4 pb-16 mx-auto mb-8 border-b gap-8 md:flex-row md:pb-16 max-w-screen-lg"
+        },
+        "partial": {
+            "path": "blocks/about"
+        }
+    },
+    "content": {
+        "image": "/P1170947.jpg",
+        "text": [
+            "This is the first line. Here is some blurb for the about block.",
+            "This is the second line. Here is some blurb for the about block.",
+            "This is the third line. Here is some blurb for the about block."
+        ]
+    }
+}

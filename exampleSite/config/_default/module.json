@@ -1,0 +1,7 @@
+{
+    "imports": [
+        {
+            "path": "github.com/eimajtrebor/hugo-theme-barebones"
+        }
+    ]
+}

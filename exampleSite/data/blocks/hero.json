@@ -1,0 +1,12 @@
+{
+    "name": "hero",
+    "config": {
+        "class": {
+            "section": "container flex flex-col px-4 pb-16 mx-auto mb-8 gap-8 border-b md:flex-row md:py-8 lg:py-16 max-w-screen-lg"
+        },
+        "partial": {
+            "path": "blocks/hero"
+        }
+    },
+    "content": {}
+}

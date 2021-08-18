@@ -1,0 +1,12 @@
+{
+    "name": "test",
+    "config": {
+        "class": {
+            "section": "container flex flex-col px-4 pb-16 mx-auto mb-8 border-b md:space-x-8 md:flex-row space-y-8 md:space-y-0 md:pb-16 max-w-screen-lg"
+        },
+        "partial": {
+            "path": "blocks/test"
+        }
+    },
+    "content": {}
+}
