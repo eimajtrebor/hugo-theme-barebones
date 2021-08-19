@@ -1,12 +1,17 @@
+{{- $isDebugMode := .Site.Params.debug | default false -}}
+{{- $global := .Site.Data.global -}}
+{{- $htmlClass := $global.config.class.html | default "" -}}
+{{- $bodyClass := $global.config.class.body | default "bg-gray-50" -}}
+{{- $mainClass := $global.config.class.main | default "container mx-auto max-w-screen-lg" -}}
 <!DOCTYPE html>
-<html lang="{{ .Site.LanguageCode }}">
+<html lang="{{ .Site.LanguageCode }}" class="{{ $htmlClass }}">
     {{- partial "head.html" . -}}
-    <body class="bg-white bg-gray-50">
-        {{- if isset .Site.Params "debug" -}}
+    <body class="{{ $bodyClass }}">
+        {{- if eq $isDebugMode true -}}
             {{- partial "debug.html" . -}}
         {{- end -}}
         {{- partial "header.html" . -}}
-        <main class="container mx-auto max-w-screen-lg">
+        <main class="{{ $mainClass }}">
             {{- block "main" . }}{{- end -}}
         </main>
         {{- partial "footer.html" . -}}

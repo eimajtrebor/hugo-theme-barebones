@@ -1,4 +1,6 @@
-<footer class="flex flex-row justify-center p-8 mx-auto text-white bg-gray-900 text-md">
+{{- $global := .Site.Data.global -}}
+{{- $footerClass := $global.config.class.footer | default "p-8 text-white bg-gray-900 text-md text-center" -}}
+<footer class="{{ $footerClass }}">
     {{- with .Site.Params.copyright -}}
     <p>&copy;{{ now.Format "2006" }} {{ . }}</p>
     {{- end -}}
