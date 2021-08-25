@@ -5,10 +5,10 @@
         </div>
     </a>
     <div class="flex flex-col p-4 mb-2 space-y-4">
-            <h2 class="text-2xl font-semibold tracking-tight">
-                <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-            </h2>
-            <p class="text-lg">{{ .Params.summary }}</p>
+            <a href="{{ .RelPermalink }}">
+                <h2 class="text-2xl font-semibold tracking-tight">{{ .Title }}</h2>
+                <p class="text-lg">{{ .Params.summary }}</p>
+            </a>
             <div class="flex flex-row flex-wrap gap-2">
                 {{ range (.GetTerms "tags") }}
                     <a href="{{ .Permalink }}">

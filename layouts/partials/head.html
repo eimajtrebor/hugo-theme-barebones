@@ -24,10 +24,7 @@
   <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} - {{ .Site.Title }}{{ end }}</title>
 
   {{ partial "fonts.html" . }}
-
   {{ partial "scripts.html" . }}
-
-  {{ partial "analytics.html" . }}
 
   {{ with .OutputFormats.Get "RSS" }}
   <link rel="alternate" href="{{ .RelPermalink | absURL }}" type="application/rss+xml" title="{{ $.Site.Title }}">

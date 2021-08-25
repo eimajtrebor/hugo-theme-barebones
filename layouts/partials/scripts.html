@@ -1,6 +1,14 @@
 {{- $defaultParams := site.Params.js -}}
 {{- $userParams := partial "func/GetParams" . -}}
 {{- $params := merge $defaultParams $userParams -}}
-{{ $params }}
-{{- $js := resources.Get "js/app.js" | js.Build $params -}}
-<script type="text/javascript" src="{{ $js.RelPermalink }}" defer></script>
+
+{{- $js := slice -}}
+{{- range (resources.Match "js/**.js") -}}
+{{- $js = $js | append (resources.Get .) -}}
+{{- end -}}
+{{- $bundle := $js | resources.Concat "js/bundle.js" -}}
+
+
+{{- $script := $bundle | js.Build $params | resources.Fingerprint -}}
+<script type="text/javascript" src="{{ $script.RelPermalink }}" defer></script>
+
