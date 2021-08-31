@@ -1,6 +1,15 @@
 # hugo-theme-barebones
 
 - [What is this project?](#what-is-this-project)
+- [Installation](#installation)
+- [Home page](#home-page)
+- [Blocks](#blocks)
+- [Custom fonts](#custom-fonts)
+- [Hugo templates](#hugo-templates)
+- [Analytics](#analytics)
+- [Social media](#social-media)
+- [JavaScript](#javascript)
+- [Hugo shortcodes](#hugo-shortcodes)
 
 ## What is this project?
 
@@ -64,13 +73,13 @@ Blocks are the mechanism to render blocks of content or modules onto your pages.
 The block shortcode is used as follows:
 
 ```
-{{< block key="<key>" >}}
+{{< block key="KEY" >}}
 ```
 
 The block shortcode's configuration is defined in the following locations:
 
 - `data/global.js`
-- `data/blocks/<key>.json`
+- `data/blocks/KEY.json`
 
 ### Block configuration
 
@@ -90,17 +99,17 @@ The global.json is flexible, allowing you to use it as you choose. The recommend
 - The config object contains global configuration for blocks.
 - The content object contains any global content that you would like to use across blocks.
 
-#### blocks/<key>.json
+#### blocks/KEY.json
 
 The individual blocks have their own configuration. The recommended schema follows:
 
 ```json
 {
-    "name": "<key>",
+    "name": "KEY",
     "config": {
         "class": {},
         "partial": {
-            "path": "<path-to-partial>"
+            "path": "PATH-TO-PARTIAL"
         }
     },
     "content": {}
