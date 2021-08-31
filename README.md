@@ -26,6 +26,7 @@ This theme contains the following:
 ## Installation
 
 - Make sure your project is a Hugo module.
+- Even better, make use of [Hugo Website Starter](https://github.com/eimajtrebor/hugo-website-starter).
 - Add the theme to your projects configuration.
 
 ```json
