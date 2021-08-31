@@ -1,5 +1,9 @@
 # hugo-theme-barebones
 
+- [What is this project?](#what-is-this-project)
+
+## What is this project?
+
 This project is a barebones theme for Hugo projects.
 
 This theme contains the following:
