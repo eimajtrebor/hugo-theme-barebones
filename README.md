@@ -8,8 +8,9 @@ This theme contains the following:
 - Alpine.js
 - Heroicons
 - Starter templates
+- Block concept for including widgets in your pages
 
-## Usage
+## Installation
 
 - Make sure your project is a Hugo module.
 - Add the theme to your projects configuration.
@@ -45,3 +46,5 @@ This theme contains the following:
 ```
 
 - You can now use TailwindCSS utility classes within your project.
+
+
