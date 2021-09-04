@@ -2,7 +2,7 @@
 {{- $tags := .GetTerms "tags" -}}
 <article class="p-4 mb-8">
     <h1 class="mb-4 text-4xl font-semibold tracking-tight text-gray-700">{{ .Title }}</h1>
-    {{- with .Date -}}
+    {{- with .date -}}
     <h2 class="mb-4 text-sm text-gray-400 uppercase">{{ dateFormat "2 January 2006" .Date }} | {{ .ReadingTime }} minute read</h2>
     {{- end -}}
     {{- with $tags -}}
