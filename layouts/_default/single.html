@@ -1,16 +1,19 @@
 {{ define "main" }}
+{{- $tags := .GetTerms "tags" -}}
 <article class="p-4 mb-8">
     <h1 class="mb-4 text-4xl font-semibold tracking-tight text-gray-700">{{ .Title }}</h1>
     {{- with .Date -}}
     <h2 class="mb-4 text-sm text-gray-400 uppercase">{{ dateFormat "2 January 2006" .Date }} | {{ .ReadingTime }} minute read</h2>
     {{- end -}}
+    {{- with $tags -}}
     <div class="flex flex-row flex-wrap pb-4 pb-8 mb-4 border-b gap-2">
-        {{ range (.GetTerms "tags") }}
+        {{ range . }}
             <a href="{{ .Permalink }}">
                 <span class="px-2 py-1 text-xs text-white text-gray-700 uppercase bg-gray-200 rounded">{{ .LinkTitle }}</span>
             </a>
         {{ end }}
     </div>
+    {{- end -}}
     <div class="text-gray-700 prose prose-lg max-w-none">
         {{ .Content }}
     </div>
